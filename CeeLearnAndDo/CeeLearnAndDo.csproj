@@ -199,6 +199,14 @@
     <Compile Include="Migrations\201803261127055_Initial.Designer.cs">
       <DependentUpon>201803261127055_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803261352037_added_props_to_user_registerModel.cs" />
+    <Compile Include="Migrations\201803261352037_added_props_to_user_registerModel.Designer.cs">
+      <DependentUpon>201803261352037_added_props_to_user_registerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803261359009_removed_dates_from_applicationuser.cs" />
+    <Compile Include="Migrations\201803261359009_removed_dates_from_applicationuser.Designer.cs">
+      <DependentUpon>201803261359009_removed_dates_from_applicationuser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Answer.cs" />
@@ -294,6 +302,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803261127055_Initial.resx">
       <DependentUpon>201803261127055_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803261352037_added_props_to_user_registerModel.resx">
+      <DependentUpon>201803261352037_added_props_to_user_registerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803261359009_removed_dates_from_applicationuser.resx">
+      <DependentUpon>201803261359009_removed_dates_from_applicationuser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

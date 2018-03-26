@@ -118,3 +118,6 @@ C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.dl
 C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.pdb
 C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.Migrations.Initial.resources
 C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.csproj.GenerateResource.Cache
+C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.csprojResolveAssemblyReference.cache
+C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.Migrations.added_props_to_user_registerModel.resources
+C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.Migrations.removed_dates_from_applicationuser.resources

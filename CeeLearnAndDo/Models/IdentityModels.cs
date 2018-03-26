@@ -27,12 +27,6 @@ namespace CeeLearnAndDo.Models
         [Required]
         [Display(Name = "Achternaam")]
         public string Lastname { get; set; }
-
-        [Display(Name = "Aangemaakt op")]
-        public DateTime CreatedAt { get; set; }
-
-        [Display(Name = "Gewijzigd op")]
-        public DateTime UpdatedAt { get; set; }
 }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
