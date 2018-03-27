@@ -15,6 +15,7 @@ namespace CeeLearnAndDo.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: AdminHome
+        [Authorize]
         public ActionResult Index()
         {
             return View();

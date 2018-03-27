@@ -117,3 +117,7 @@ C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.cs
 C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.csproj.CoreCompileInputs.cache
 C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.dll
 C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.pdb
+C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\bin\CeeLearnAndDo.dll.config
+C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\bin\CeeLearnAndDo.dll
+C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\bin\CeeLearnAndDo.pdb
+C:\Visual Studio Projects\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.csprojResolveAssemblyReference.cache

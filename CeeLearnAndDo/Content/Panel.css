@@ -69,3 +69,10 @@ textarea {
     #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a, #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a {
         color: #fff;
     }
+
+
+@media (min-width: 992px) {
+    #mainNav.fixed-top .navbar-sidenav {
+        height: 100vh;
+    }
+}
