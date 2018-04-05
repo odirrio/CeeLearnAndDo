@@ -22,7 +22,7 @@ namespace CeeLearnAndDo.Models
         public string URL { get; set; }
 
         [Required]
-        [Display(Name = "Afbeeldingspad")]
+        [Display(Name = "Afbeelding")]
         public string ImagePath { get; set; }
 
         [Display(Name = "Geplaatst op")]
