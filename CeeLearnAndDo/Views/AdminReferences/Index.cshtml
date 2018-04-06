@@ -73,13 +73,19 @@
         @foreach (var item in Model)
         {
             <div class="card col-md-3" style="min-width: 286px; margin: 10px">
-                <div class="card-img-top text-center"
-                     style="height: 180px;
+                <a title="Ga naar '@Html.DisplayFor(modelItem => item.URL)'": href="http://@Html.DisplayFor(modelItem => item.URL)" target="_blank">
+                    <div class="card-img-top text-center"
+                         style="height: 180px;
                                 width: 100%;
                                 background-color: rgba(0, 0, 0, 0.02);
                                 border-radius: .25rem;">
-                    <img style="height: auto; max-height:100%; max-width: 100%" src="~/UploadedFiles/ReferenceImages/@Html.DisplayFor(modelItem => item.ImagePath)" />
-                </div>
+
+                        <img style="height: auto;
+                                    max-height:100%;
+                                    max-width: 100%"
+                             src="~/UploadedFiles/ReferenceImages/@Html.DisplayFor(modelItem => item.ImagePath)" />
+                    </div>
+                </a>
                 <div class="card-body">
                     <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
                     <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>

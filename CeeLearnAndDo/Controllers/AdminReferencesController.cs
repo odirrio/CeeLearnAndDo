@@ -72,6 +72,9 @@ namespace CeeLearnAndDo.Controllers
                 // add reference properties
                 db.References.Add(reference);
 
+                // remove http:// or https:// from posted URL
+                reference.URL = reference.URL.Replace("https://", "").Replace("http://", "");
+
                 // at dates
                 reference.CreatedAt = DateTime.Now;
                 reference.UpdatedAt = DateTime.Now;
@@ -111,6 +114,9 @@ namespace CeeLearnAndDo.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(reference).State = EntityState.Modified;
+
+                // remove http:// or https:// from posted URL
+                reference.URL = reference.URL.Replace("https://", "").Replace("http://", "");
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

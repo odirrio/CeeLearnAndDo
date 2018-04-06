@@ -10,17 +10,20 @@ using CeeLearnAndDo.Models;
 
 namespace CeeLearnAndDo.Controllers
 {
+    [RoutePrefix("beheer/artikelen")]
+    [Route("{action=index}")]
     public class AdminArticlesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: AdminArticles
+        // GET: beheer/artikelen
         public ActionResult Index()
         {
             return View(db.Articles.ToList());
         }
 
-        // GET: AdminArticles/Details/5
+        // GET: beheer/artikelen/5
+        [Route("{id}")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,17 +38,19 @@ namespace CeeLearnAndDo.Controllers
             return View(article);
         }
 
-        // GET: AdminArticles/Create
+        // GET: beheer/artikelen/nieuw
+        [Route("nieuw")]
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AdminArticles/Create
+        // POST: beheer/artikelen/nieuw
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("nieuw")]
         public ActionResult Create([Bind(Include = "Id,Title,Description,Content,ImagePath,Approved,CreatedAt,UpdatedAt")] Article article)
         {
             if (ModelState.IsValid)
@@ -57,8 +62,9 @@ namespace CeeLearnAndDo.Controllers
 
             return View(article);
         }
-
-        // GET: AdminArticles/Edit/5
+        
+        // GET: beheer/artikelen/wijzigen/5
+        [Route("wijzigen/{id:int}")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,11 +79,12 @@ namespace CeeLearnAndDo.Controllers
             return View(article);
         }
 
-        // POST: AdminArticles/Edit/5
+        // POST: beheer/artikelen/wijzigen/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("wijzigen/{id:int}")]
         public ActionResult Edit([Bind(Include = "Id,Title,Description,Content,ImagePath,Approved,CreatedAt,UpdatedAt")] Article article)
         {
             if (ModelState.IsValid)
@@ -89,7 +96,8 @@ namespace CeeLearnAndDo.Controllers
             return View(article);
         }
 
-        // GET: AdminArticles/Delete/5
+        // GET: beheer/artikelen/verwijderen/5
+        [Route("verwijderen/{id:int}")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +112,8 @@ namespace CeeLearnAndDo.Controllers
             return View(article);
         }
 
-        // POST: AdminArticles/Delete/5
+        // POST: beheer/artikelen/verwijderen/5
+        [Route("verwijderen/{id:int}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

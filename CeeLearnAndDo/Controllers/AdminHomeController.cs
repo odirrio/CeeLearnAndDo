@@ -16,7 +16,7 @@ namespace CeeLearnAndDo.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: AdminHome
+        // GET: beheer/dashboard
         [Authorize]
         public ActionResult Index()
         {
