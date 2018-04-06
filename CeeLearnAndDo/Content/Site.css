@@ -1,6 +1,5 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding: 0;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +20,27 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+
+/*
+    Colors
+*/
+.bg-primary {
+    background-color: #4e84c4 !important;
+}
+
+.bg-secondary {
+    background-color: #1C5182 !important;
+}
+
+/*
+    Header
+*/
+.header-image {
+    border-radius: 50%;
+}
+
+hr.star-light:after {
+    background-color: #4e84c4
 }

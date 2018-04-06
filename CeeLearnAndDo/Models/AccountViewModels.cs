@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CeeLearnAndDo.Models
@@ -6,7 +7,7 @@ namespace CeeLearnAndDo.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
     }
 
@@ -33,7 +34,7 @@ namespace CeeLearnAndDo.Models
         public string Code { get; set; }
         public string ReturnUrl { get; set; }
 
-        [Display(Name = "Remember this browser?")]
+        [Display(Name = "Deze browser onthouden?")]
         public bool RememberBrowser { get; set; }
 
         public bool RememberMe { get; set; }
@@ -42,23 +43,23 @@ namespace CeeLearnAndDo.Models
     public class ForgotViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
     }
 
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "E-mail")]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Wachtwoord")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Mij onthouden?")]
         public bool RememberMe { get; set; }
     }
 
@@ -66,18 +67,31 @@ namespace CeeLearnAndDo.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
 
+        [StringLength(50, ErrorMessage = "De {0} moet bestaan uit minstens {2} karakters.", MinimumLength = 2)]
+        [Display(Name = "Voornaam")]
+        public string Firstname { get; set; }
+
+        [StringLength(50, ErrorMessage = "De {0} moet bestaan uit minstens {2} karakters.", MinimumLength = 2)]
+        [Display(Name = "Tussenvoegsel")]
+        public string Middlename { get; set; }
+
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(50, ErrorMessage = "De {0} moet bestaan uit minstens {2} karakters.", MinimumLength = 2)]
+        [Display(Name = "Achternaam")]
+        public string Lastname { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "Het {0} moet bestaan uit minstens {2} karakters.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Wachtwoord")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Wachtwoord herhalen")]
+        [Compare("Password", ErrorMessage = "De wachtwoorden komen niet overeen.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -85,18 +99,18 @@ namespace CeeLearnAndDo.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Wachtwoord")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Wachtwoord herhalen")]
+        [Compare("Password", ErrorMessage = "De wachtwoorden komen niet overheen.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
@@ -106,7 +120,7 @@ namespace CeeLearnAndDo.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
     }
 }

@@ -151,7 +151,7 @@ namespace CeeLearnAndDo.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Firstname = model.Firstname, Middlename = model.Middlename, Lastname = model.Lastname };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
