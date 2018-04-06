@@ -24,6 +24,7 @@ namespace CeeLearnAndDo.Controllers
         }
 
         // GET: beheer/referenties/5
+        [Route("{id}")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -84,7 +85,7 @@ namespace CeeLearnAndDo.Controllers
         }
 
         // GET: beheer/referenties/wijzigen/5
-        [Route("wijzigen/{referenceId:int}")]
+        [Route("wijzigen/{id:int}")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -104,7 +105,7 @@ namespace CeeLearnAndDo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("wijzigen/{referenceId:int}")]
+        [Route("wijzigen/{id:int}")]
         public ActionResult Edit([Bind(Include = "Id,Title,Description,URL,ImagePath,CreatedAt,UpdatedAt")] Reference reference)
         {
             if (ModelState.IsValid)
@@ -117,7 +118,7 @@ namespace CeeLearnAndDo.Controllers
         }
 
         // GET: beheer/referenties/verwijderen/5
-        [Route("verwijderen/{referenceId:int}")]
+        [Route("verwijderen/{id:int}")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -133,7 +134,7 @@ namespace CeeLearnAndDo.Controllers
         }
 
         // POST: beheer/referenties/verwijderen/5
-        [Route("verwijderen/{referenceId:int}")]
+        [Route("verwijderen/{id:int}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
