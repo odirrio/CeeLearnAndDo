@@ -44,3 +44,24 @@ textarea {
 hr.star-light:after {
     background-color: #4e84c4
 }
+
+hr.star-dark:after {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-outline-dark {
+    border-color: #000000 !important;
+    color: #000000 !important;
+}
+
+.btn-outline-dark:hover {
+        background-color: #000000 !important;
+        color:#ffffff !important;
+}
+
+
+.btn-active {
+    color: #000000 !important;
+}
+
