@@ -196,6 +196,7 @@
     <Compile Include="Controllers\AdminReferencesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReferencesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -413,6 +414,7 @@
     <Content Include="Views\AdminCategories\Details.cshtml" />
     <Content Include="Views\AdminCategories\Edit.cshtml" />
     <Content Include="Views\AdminCategories\Index.cshtml" />
+    <Content Include="Views\References\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
