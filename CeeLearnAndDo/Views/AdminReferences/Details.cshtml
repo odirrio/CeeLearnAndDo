@@ -24,7 +24,14 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
+            @if (Model.Description.Length > 20)
+            {
+                @Model.Description.Substring(0, 20)...
+                }
+            else
+            {
+                @Html.DisplayFor(model => model.Description)
+            }
         </dd>
 
         <dt>

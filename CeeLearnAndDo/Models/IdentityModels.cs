@@ -54,5 +54,7 @@ namespace CeeLearnAndDo.Models
         public DbSet<ContactContent> ContactContent { get; set; }
         public DbSet<QuestionsContent> QuestionsContent { get; set; }
         public DbSet<ReferencesContent> ReferencesContent { get; set; }
+
+        public System.Data.Entity.DbSet<CeeLearnAndDo.Models.Category> Categories { get; set; }
     }
 }
