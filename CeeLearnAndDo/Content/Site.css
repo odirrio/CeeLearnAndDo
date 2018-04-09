@@ -2,6 +2,10 @@
     padding: 0;
 }
 
+.head-container {
+    margin-top: 150px;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -38,6 +42,9 @@ textarea {
 */
 .header-image {
     border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
 }
 
 hr.star-light:after {
@@ -113,3 +120,8 @@ footer iframe {
 }
 
 /*End Footer styling*/
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}

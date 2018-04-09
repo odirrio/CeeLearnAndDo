@@ -1,0 +1,66 @@
+﻿@model IEnumerable<CeeLearnAndDo.Models.Reference>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Page Content -->
+<div class="head-container">
+    <div class="container">
+        <!-- Page Heading -->
+        <h1 class="my-4">
+            {Titel}
+            <small>{Ondertitel}</small>
+        </h1>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-sm-6 portfolio-item" style="margin-bottom: 40px;">
+                    <div class="card h-100">
+                        <a title="Ga naar '@Html.DisplayFor(modelItem => item.URL)'" href="http://@Html.DisplayFor(modelItem => item.URL)" target="_blank">
+                            <img class="card-img-top"
+                                 src="~/UploadedFiles/ReferenceImages/@Html.DisplayFor(modelItem => item.ImagePath)"
+                                 alt="@Html.DisplayFor(modelItem => item.Title)"
+                                 style="max-height: 400px; height: 200px; width: 100%; object-fit: cover;">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a title="Ga naar '@Html.DisplayFor(modelItem => item.URL)'" href="http://@Html.DisplayFor(modelItem => item.URL)" target="_blank">@Html.DisplayFor(modelItem => item.Title)</a>
+                            </h4>
+                            <p class="card-text">
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- Pagination -->
+    @*<ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>*@
+</div>
+<!-- /.container -->
