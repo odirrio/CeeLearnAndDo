@@ -33,7 +33,6 @@ textarea {
 .bg-secondary {
     background-color: #1C5182 !important;
 }
-
 /*
     Header
 */
@@ -60,8 +59,57 @@ hr.star-dark:after {
         color:#ffffff !important;
 }
 
-
 .btn-active {
     color: #000000 !important;
 }
 
+.btn-contact {
+    background-color: #4e84c4 !important;
+    border-color: #4e84c4 !important;
+    color:#ffffff !important;
+}
+
+/*Footer Styling*/
+footer {
+    display: flex;
+    flex-direction: row;
+    background-color: #1C5182;
+    padding: 3rem 0;
+}
+
+    footer p {
+        font-size: 1rem;
+        color: white;
+    }
+
+    footer h1 {
+        font-size: 1.5rem;
+        color: white;
+    }
+.social-media {
+    margin-left: 14%
+}
+.company-information {
+    margin-left: 7rem;
+    width: 100%;
+    max-width: 18rem;
+}
+
+.sm-ico{
+    display: flex;
+}
+
+.sm-container img {
+    margin-right: 1rem;
+    height: 50px;
+    width: 50px;
+}
+
+footer iframe {
+    border: none;
+    width: 20rem;
+    height: 16rem;
+    margin-left: 7rem;
+}
+
+/*End Footer styling*/
