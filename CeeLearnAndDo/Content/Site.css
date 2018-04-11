@@ -75,6 +75,16 @@ hr.star-dark:after {
     border-color: #4e84c4 !important;
     color:#ffffff !important;
 }
+.capitalize {
+    text-transform: uppercase;
+    padding: 1rem;
+    text-decoration: none;
+    color: #FFF;
+}
+.capitalize:hover {
+    color: #18bc9c;
+    text-decoration: none;
+}
 
 /*Footer Styling*/
 footer {
