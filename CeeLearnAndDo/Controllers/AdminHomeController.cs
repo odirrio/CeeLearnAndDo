@@ -10,11 +10,13 @@ using CeeLearnAndDo.Models;
 
 namespace CeeLearnAndDo.Controllers
 {
+    [RoutePrefix("beheer/dashboard")]
+    [Route("{action=index}")]
     public class AdminHomeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: AdminHome
+        // GET: beheer/dashboard
         [Authorize]
         public ActionResult Index()
         {

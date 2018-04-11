@@ -16,6 +16,8 @@ namespace CeeLearnAndDo.Models
         [Display(Name = "Titel")]
         public string Title { get; set; }
 
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Beschrijving")]
         public string Description { get; set; }
 
         [Display(Name = "URL")]
