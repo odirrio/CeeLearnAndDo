@@ -113,6 +113,38 @@ namespace CeeLearnAndDo.Controllers
         {
             if (ModelState.IsValid)
             {
+                db.Entry(reference).State = EntityState.Modified;
+
+                var dbReverence = db.References.Where(x => x.Id == reference.Id).SingleOrDefault();
+                string oldImagePath = dbReverence.ImagePath;
+
+                if (ImagePath != null)
+                {
+                    // generate random guid string as fileName
+                    Guid g = Guid.NewGuid();
+                    string fileName = Convert.ToBase64String(g.ToByteArray());
+                    fileName = fileName.Replace("=", "");
+                    fileName = fileName.Replace("+", "");
+                    fileName = fileName.Replace("/", "");
+                    fileName = fileName + "-reference" + Path.GetExtension(ImagePath.FileName);
+
+                    // delete old image
+                    oldImagePath = Request.MapPath("~/UploadedFiles/ReferenceImages" + oldImagePath);
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+
+                    // save image
+                    string path = Path.Combine(Server.MapPath("~/UploadedFiles/ReferenceImages"), fileName);
+                    ImagePath.SaveAs(path);
+
+                    // set properties
+                    reference.ImagePath = fileName;
+                }
+                reference.CreatedAt = DateTime.Now;
+                reference.UpdatedAt = DateTime.Now;
+
                 // remove http:// or https:// from posted URL
                 reference.URL = reference.URL.Replace("https://", "").Replace("http://", "");
                 db.SaveChanges();

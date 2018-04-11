@@ -23,6 +23,8 @@ _UpgradeReport_Files/
 # Directories #
 ###############
 bin/
+UploadedFiles/
+../.vs/*
 obj/
 TestResults/
 ###################
