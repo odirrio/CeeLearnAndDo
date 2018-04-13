@@ -1,0 +1,39 @@
+﻿@model CeeLearnAndDo.Models.Reference
+
+@{
+    ViewBag.Title = "Bekijken";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <div class="head-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>
+                        @Html.DisplayFor(model => model.Title)
+                    </h1><br />
+                    <small>Geplaatst op: <strong>@Html.DisplayFor(model => model.CreatedAt)</strong></small> | 
+                    <small>Laatst gewijzigd op: <strong>@Html.DisplayFor(model => model.UpdatedAt)</strong></small>
+                </div>
+                <div class="col-md-12">
+                    <a title="Ga naar '@Html.DisplayFor(model => model.URL)'" href="http://@Html.DisplayFor(model => model.URL)" target="_blank">@Html.DisplayFor(model => model.URL)</a>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-12">
+                    <p>@Html.DisplayFor(model => model.Description)</p>
+                </div>
+                <div class="col-md-12">
+                    <img class="details-img" src="~/UploadedFiles/ReferenceImages/@Html.DisplayFor(model => model.ImagePath)" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>@Html.ActionLink("Terug naar het overzicht", "Index")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

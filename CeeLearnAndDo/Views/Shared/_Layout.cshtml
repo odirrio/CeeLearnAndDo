@@ -12,6 +12,7 @@
 
     <!-- Custom fonts for this template -->
     @Styles.Render("/vendor/font-awesome/css/font-awesome.min.css")
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -58,13 +59,13 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto text-uppercase">
                     <li class="nav-item mx-0 mx-lg-1">
-                        @Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" })
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/">Home</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        @Html.ActionLink("Over ons", "About", "Home", new { @class = "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" })
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/referenties">Referenties</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        @Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" })
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/contact">Contact</a>
                     </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -75,34 +76,41 @@
 
     <!--Footer Section-->
     <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 social-media">
 
-        <div class="social-media">
-            <h1>Socialmedia</h1>
-            <div class="sm-container">
-                <a href="https://www.facebook.com">
-                    <img src="https://www.placehold.it/50x50" />
-                </a>
-                <a href="https://www.twitter.com">
-                    <img src="https://www.placehold.it/50x50" />
-                </a>
-                <a href="https://www.instagram.com">
-                    <img src="https://www.placehold.it/50x50" />
-                </a>
-                <a href="https://www.youtube.com">
-                    <img src="https://www.placehold.it/50x50" />
-                </a>
+                    <h1>Socialmedia</h1>
+                    <div class="sm-container">
+                        <a target="_blank" href="https://www.facebook.com">
+                            <i style="font-size: 50px" class="fab fa-facebook text-white"></i>
+                        </a>
+                        <a target="_blank" href="https://www.twitter.com">
+                            <i style="font-size: 50px" class="fab fa-twitter text-white"></i>
+                        </a>
+                        <a target="_blank" href="https://www.instagram.com">
+                            <i style="font-size: 50px" class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a target="_blank" href="https://www.youtube.com">
+                            <i style="font-size: 50px" class="fab fa-youtube text-white"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 company-information">
+                    <h1>CeeLearnAndDo</h1>
+                    <p>Kruseman van Eltenweg 4</p>
+                    <p>1817 BC Alkmaar</p>
+                    <p>The Netherlands</p>
+                    <p>(072) 547 66 00</p>
+                </div>
+
+                <div class="col-md-4">
+                    <iframe src="https://snazzymaps.com/embed/63003"></iframe>
+                </div>
             </div>
         </div>
-
-        <div class="company-information">
-            <h1>Company information</h1>
-            <p>Kruseman van Eltenweg 4</p>
-            <p>1817 BC Alkmaar</p>
-            <p>The Netherlands</p>
-            <p>(072) 547 66 00</p>
-        </div>
-
-        <iframe src="https://snazzymaps.com/embed/63003"></iframe>
     </footer>
 
     @Scripts.Render("/js/jquery-3.3.1.min.js")
