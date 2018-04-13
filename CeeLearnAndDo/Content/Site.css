@@ -40,6 +40,10 @@ textarea {
 /*
     Header
 */
+.profile-spacing{
+    padding-left: 1rem;
+    padding-right: 2rem;
+}
 .header-image {
     border-radius: 50%;
     height: 200px;
