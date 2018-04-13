@@ -59,13 +59,13 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto text-uppercase">
                     <li class="nav-item mx-0 mx-lg-1">
-                        @Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" })
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/">Home</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        @Html.ActionLink("Over ons", "About", "Home", new { @class = "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" })
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/referenties">Referenties</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        @Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" })
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/contact">Contact</a>
                     </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
