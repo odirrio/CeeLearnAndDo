@@ -415,7 +415,11 @@
     <Content Include="Views\AdminCategories\Edit.cshtml" />
     <Content Include="Views\AdminCategories\Index.cshtml" />
     <Content Include="Views\References\Index.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+=======
     <Content Include="Views\References\Details.cshtml" />
+>>>>>>> origin/develop
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
