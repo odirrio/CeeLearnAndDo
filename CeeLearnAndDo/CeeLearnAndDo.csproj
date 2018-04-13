@@ -195,6 +195,7 @@
     <Compile Include="Controllers\AdminCategoriesController.cs" />
     <Compile Include="Controllers\AdminHomeController.cs" />
     <Compile Include="Controllers\AdminReferencesController.cs" />
+    <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ReferencesController.cs" />
@@ -416,9 +417,12 @@
     <Content Include="Views\AdminCategories\Index.cshtml" />
     <Content Include="Views\References\Index.cshtml" />
     <Content Include="Views\References\Details.cshtml" />
+    <Content Include="Views\Articles\Details.cshtml" />
+    <Content Include="Views\Articles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="UploadedFiles\ArticleImages\" />
     <Folder Include="UploadedFiles\ReferenceImages\" />
   </ItemGroup>
   <ItemGroup>

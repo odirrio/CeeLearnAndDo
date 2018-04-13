@@ -79,7 +79,7 @@ namespace CeeLearnAndDo.Controllers
                 reference.CreatedAt = DateTime.Now;
                 reference.UpdatedAt = DateTime.Now;
 
-                // save reference
+                // save new reference
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

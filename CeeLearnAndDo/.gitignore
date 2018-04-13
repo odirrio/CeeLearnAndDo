@@ -22,6 +22,7 @@ _UpgradeReport_Files/
 ###############
 # Directories #
 ###############
+App_Data/
 bin/
 UploadedFiles/
 ../.vs/*
@@ -75,3 +76,18 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+.vs/CeeLearnAndDo/v15/.suo
+.vs/CeeLearnAndDo/v15/sqlite3/storage.ide
+CeeLearnAndDo/App_Data/aspnet-CeeLearnAndDo-20180323103854.mdf
+CeeLearnAndDo/App_Data/aspnet-CeeLearnAndDo-20180323103854_log.ldf
+CeeLearnAndDo/CeeLearnAndDo.csproj
+CeeLearnAndDo/bin/CeeLearnAndDo.dll
+CeeLearnAndDo/bin/CeeLearnAndDo.pdb
+CeeLearnAndDo/obj/Debug/CeeLearnAndDo.csproj.CoreCompileInputs.cache
+CeeLearnAndDo/obj/Debug/CeeLearnAndDo.csproj.FileListAbsolute.txt
+CeeLearnAndDo/obj/Debug/CeeLearnAndDo.csproj.GenerateResource.Cache
+CeeLearnAndDo/obj/Debug/CeeLearnAndDo.csprojResolveAssemblyReference.cache
+CeeLearnAndDo/obj/Debug/CeeLearnAndDo.dll
+CeeLearnAndDo/obj/Debug/CeeLearnAndDo.pdb
+CeeLearnAndDo/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+CeeLearnAndDo/obj/Release/CeeLearnAndDo.csproj.CoreCompileInputs.cache

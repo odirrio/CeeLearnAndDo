@@ -126,3 +126,9 @@ footer iframe {
     height: auto;
     object-fit: cover;
 }
+
+.article-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

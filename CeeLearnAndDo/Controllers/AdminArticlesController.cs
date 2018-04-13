@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CeeLearnAndDo.Models;
+using System.IO;
 
 namespace CeeLearnAndDo.Controllers
 {
@@ -19,7 +20,12 @@ namespace CeeLearnAndDo.Controllers
         // GET: beheer/artikelen
         public ActionResult Index()
         {
-            return View(db.Articles.ToList());
+            var articles = from a in db.Articles
+                           select a;
+
+            articles = articles.OrderByDescending(s => s.UpdatedAt);
+
+            return View(articles.ToList());
         }
 
         // GET: beheer/artikelen/5
@@ -51,11 +57,32 @@ namespace CeeLearnAndDo.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("nieuw")]
-        public ActionResult Create([Bind(Include = "Id,Title,Description,Content,ImagePath,Approved,CreatedAt,UpdatedAt")] Article article)
+        public ActionResult Create([Bind(Include = "Id,Title,Description,Content,ImagePath,Approved,CreatedAt,UpdatedAt")] Article article, HttpPostedFileBase ImagePath)
         {
             if (ModelState.IsValid)
             {
+
+                // generate random guid string as fileName
+                Guid g = Guid.NewGuid();
+                string fileName = Convert.ToBase64String(g.ToByteArray());
+                fileName = fileName.Replace("=", "");
+                fileName = fileName.Replace("+", "");
+                fileName = fileName.Replace("/", "");
+                fileName = fileName + "-article" + Path.GetExtension(ImagePath.FileName);
+
+                // save image
+                string path = Path.Combine(Server.MapPath("~/UploadedFiles/ArticleImages"), fileName);
+                ImagePath.SaveAs(path);
+                article.ImagePath = fileName;
+                
+                // add article properties
                 db.Articles.Add(article);
+
+                // at dates
+                article.CreatedAt = DateTime.Now;
+                article.UpdatedAt = DateTime.Now;
+
+                // save new article
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

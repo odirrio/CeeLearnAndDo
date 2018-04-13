@@ -15,6 +15,11 @@
     <!-- Plugin CSS -->
     @Styles.Render("/vendor/datatables/dataTables.bootstrap4.css")
 
+
+    <!-- Summernote -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
+
+
     <!-- Custom styles for this template -->
     @Styles.Render("/css/sb-admin.css")
 
@@ -108,6 +113,7 @@
 
     <!-- Bootstrap core JavaScript-->
     @Scripts.Render("/js/jquery-3.3.1.min.js")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     @Scripts.Render("/js/bootstrap.min.js")
 
 
@@ -125,6 +131,16 @@
     <!-- Custom scripts for this page-->
     @Scripts.Render("~/js/sb-admin-datatables.min.js")
     @Scripts.Render("~/js/sb-admin-charts.min.js")
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+
+    <script>
+            $('#summernote').summernote({
+                placeholder: 'Content',
+                tabsize: 2,
+                height: 100
+            });
+    </script>
 
     @RenderSection("scripts", required: false)
 </body>

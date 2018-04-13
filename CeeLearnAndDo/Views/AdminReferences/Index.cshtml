@@ -8,7 +8,7 @@
 <h2>Referentiebeheer</h2>
 
 <p>
-    @Html.ActionLink("Nieuw", "Create", null, new { @class = "btn btn-success" })
+    @Html.ActionLink("Nieuwe referentie", "Create", null, new { @class = "btn btn-success" })
 </p>
 
 <section class="container">
@@ -33,7 +33,7 @@
                     </p>
                     <a title="Bekijken" href="@Url.Action("Details", new { id = item.Id })" class="btn btn-primary"><i class="fas fa-eye"></i></a>
                     <a title="Wijzigen" href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-info"><i class="fas fa-edit"></i></a>
-                    <a title="verwijderen" href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                    <a title="Verwijderen" href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                 </div>
             </div>
         }

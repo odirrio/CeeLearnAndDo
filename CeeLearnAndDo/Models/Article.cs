@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace CeeLearnAndDo.Models
 {
@@ -18,11 +19,14 @@ namespace CeeLearnAndDo.Models
 
         public List<Category> Category { get; set; }
 
+        [DataType(DataType.MultilineText)]
         [Required]
         [Display(Name = "Beschrijving")]
         public string Description { get; set; }
 
+        [DataType(DataType.MultilineText)]
         [Required]
+        [AllowHtml]
         [Display(Name = "Content")]
         public string Content { get; set; }
 
