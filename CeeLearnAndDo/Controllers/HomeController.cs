@@ -13,10 +13,16 @@ namespace CeeLearnAndDo.Controllers
             return View();
         }
 
-        [Route("contact")]
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
         public ActionResult Contact()
         {
-            ViewBag.Message = "Contactpagina";
+            ViewBag.Message = "Your contact page.";
 
             return View();
         }

@@ -8,7 +8,7 @@
 <h2>Edit</h2>
 
 
-@using (Html.BeginForm("Edit", "AdminReferences", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm(new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -62,7 +62,7 @@
 }
 
 <div>
-    @Html.ActionLink("Terug naar het overzicht", "Index")
+    @Html.ActionLink("Back to List", "Index")
 </div>
 
 @section Scripts {
