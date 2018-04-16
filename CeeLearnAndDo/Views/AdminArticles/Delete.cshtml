@@ -1,81 +1,53 @@
 ﻿@model CeeLearnAndDo.Models.Article
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = @Html.DisplayFor(model => model.Title) + " verwijderen";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Verwijderen</h2>
 
-<h3>Weet je zeker dat je dit wilt verwijderen?</h3>
-<div>
-    <h4>Artikel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImagePath)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImagePath)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Approved)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Approved)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedAt)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UpdatedAt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UpdatedAt)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Verwijderen" class="btn btn-default" /> |
-            @Html.ActionLink("Terug naar het overzicht", "Index")
-        </div>
-    }
+<div class="alert alert-danger" role="alert">
+    Weet je zeker dat je dit artikel wilt <strong>verwijderen</strong>?<br />
+    <input type="submit" value="Verwijderen" class="btn btn-danger" />
 </div>
+
+<!-- Header -->
+<header class="masthead article-image bg-primary text-white text-center" style="background-image: url(/UploadedFiles/ArticleImages/@Html.DisplayFor(model => model.ImagePath))">
+    <div class="container" style="text-shadow: 1px 1px 1px black">
+        <h1 class="mb-0">@Html.DisplayFor(model => model.Title)</h1>
+        <p class="font-weight-light mb-0">@Html.DisplayFor(model => model.Description)</p>
+    </div>
+</header>
+<section class="bg-about text-black mb-0" id="about">
+    <div class="d-flex flex-row">
+        <div class="p-2">
+            <small>
+                <a href="@Url.Action("Index")"><i class="fas fa-arrow-left"></i> Terug naar het overzicht</a>
+            </small>
+        </div>
+        <div class="p-2 ml-auto">
+            <small>Laatst gewijzigd op: <strong>@Html.DisplayFor(model => model.UpdatedAt)</strong></small>
+        </div>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @Html.Raw(Model.Content)
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="d-flex flex-row">
+        <div class="p-2">
+            <small>
+                <a href="@Url.Action("Index")"><i class="fas fa-arrow-left"></i> Terug naar het overzicht</a>
+            </small>
+        </div>
+        <div class="p-2 ml-auto">
+            <small>Laatst gewijzigd op: <strong>@Html.DisplayFor(model => model.UpdatedAt)</strong></small>
+        </div>
+    </div>
+</section>
+

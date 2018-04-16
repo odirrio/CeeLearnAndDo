@@ -80,12 +80,32 @@
     object-fit: cover;
 }
 
+.list-group {
+    margin: 2em 0;
+}
+
 /*
     Edit-page
 */
-
 .edit-img {
     width: 50%;
     height: auto;
     object-fit: cover;
+}
+
+pre {
+    background: #F6F8FA;
+    padding: 2rem;
+    width: 50%;
+    min-width: 600px;
+    border-left: 3px solid #1C5182;
+}
+
+/*
+    Articles
+*/
+.article-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -31,7 +31,7 @@ namespace CeeLearnAndDo.Models
         public string Content { get; set; }
 
         [Required]
-        [Display(Name = "Afbeeldingspad")]
+        [Display(Name = "Header afbeelding")]
         public string ImagePath { get; set; }
 
         [Display(Name = "Goedgekeurd")]

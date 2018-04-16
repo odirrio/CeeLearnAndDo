@@ -114,9 +114,12 @@ namespace CeeLearnAndDo.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(reference).State = EntityState.Modified;
+                db.Entry(reference).Property(x => x.ImagePath).IsModified = false;
+                db.Entry(reference).Property(x => x.CreatedAt).IsModified = false;
 
-                var dbReverence = db.References.Where(x => x.Id == reference.Id).SingleOrDefault();
-                string oldImagePath = dbReverence.ImagePath;
+
+                var dbReference = db.References.Where(x => x.Id == reference.Id).SingleOrDefault();
+                string oldImagePath = dbReference.ImagePath;
 
                 if (ImagePath != null)
                 {
@@ -142,11 +145,13 @@ namespace CeeLearnAndDo.Controllers
                     // set properties
                     reference.ImagePath = fileName;
                 }
-                reference.CreatedAt = DateTime.Now;
+
+                // set dates
                 reference.UpdatedAt = DateTime.Now;
 
                 // remove http:// or https:// from posted URL
                 reference.URL = reference.URL.Replace("https://", "").Replace("http://", "");
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

@@ -18,6 +18,7 @@ namespace CeeLearnAndDo.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: beheer/artikelen
+        [Authorize]
         public ActionResult Index()
         {
             var articles = from a in db.Articles
@@ -30,6 +31,7 @@ namespace CeeLearnAndDo.Controllers
 
         // GET: beheer/artikelen/5
         [Route("{id}")]
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -44,8 +46,33 @@ namespace CeeLearnAndDo.Controllers
             return View(article);
         }
 
+        // Upload image
+        [HttpPost]
+        [Authorize]
+        public string UploadImage()
+        {
+            string fileName = "";
+            for (int i = 0; i < Request.Files.Count; i++)
+            {
+                var file = Request.Files[i];
+
+                // generate random guid string as fileName
+                Guid g = Guid.NewGuid();
+                fileName = Convert.ToBase64String(g.ToByteArray());
+                fileName = fileName.Replace("=", "");
+                fileName = fileName.Replace("+", "");
+                fileName = fileName.Replace("/", "");
+                fileName = fileName + "-article" + Path.GetExtension(file.FileName);
+
+                var path = Path.Combine(Server.MapPath("~/UploadedFiles/ArticleImages"), fileName);
+                file.SaveAs(path);
+            }
+            return "/UploadedFiles/ArticleImages/" + fileName;
+        }
+
         // GET: beheer/artikelen/nieuw
         [Route("nieuw")]
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -57,6 +84,7 @@ namespace CeeLearnAndDo.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("nieuw")]
+        [Authorize]
         public ActionResult Create([Bind(Include = "Id,Title,Description,Content,ImagePath,Approved,CreatedAt,UpdatedAt")] Article article, HttpPostedFileBase ImagePath)
         {
             if (ModelState.IsValid)
@@ -74,9 +102,12 @@ namespace CeeLearnAndDo.Controllers
                 string path = Path.Combine(Server.MapPath("~/UploadedFiles/ArticleImages"), fileName);
                 ImagePath.SaveAs(path);
                 article.ImagePath = fileName;
-                
+
                 // add article properties
                 db.Articles.Add(article);
+
+                // set approved false
+                article.Approved = false;
 
                 // at dates
                 article.CreatedAt = DateTime.Now;
@@ -89,9 +120,10 @@ namespace CeeLearnAndDo.Controllers
 
             return View(article);
         }
-        
+
         // GET: beheer/artikelen/wijzigen/5
         [Route("wijzigen/{id:int}")]
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -112,11 +144,47 @@ namespace CeeLearnAndDo.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("wijzigen/{id:int}")]
-        public ActionResult Edit([Bind(Include = "Id,Title,Description,Content,ImagePath,Approved,CreatedAt,UpdatedAt")] Article article)
+        [Authorize]
+        public ActionResult Edit([Bind(Include = "Id,Title,Description,Content,ImagePath,Approved,CreatedAt,UpdatedAt")] Article article, HttpPostedFileBase ImagePath)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(article).State = EntityState.Modified;
+                db.Entry(article).Property(x => x.ImagePath).IsModified = false;
+                db.Entry(article).Property(x => x.CreatedAt).IsModified = false;
+
+                var dbArticle = db.Articles.Where(x => x.Id == article.Id).SingleOrDefault();
+                string oldImagePath = dbArticle.ImagePath;
+
+                if (ImagePath != null)
+                {
+
+                    // generate random guid string as fileName
+                    Guid g = Guid.NewGuid();
+                    string fileName = Convert.ToBase64String(g.ToByteArray());
+                    fileName = fileName.Replace("=", "");
+                    fileName = fileName.Replace("+", "");
+                    fileName = fileName.Replace("/", "");
+                    fileName = fileName + "-article" + Path.GetExtension(ImagePath.FileName);
+
+                    // delete old image
+                    oldImagePath = Request.MapPath("~/UploadedFiles/ArticleImages" + oldImagePath);
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+
+                    // save image
+                    string path = Path.Combine(Server.MapPath("~/UploadedFiles/ArticleImages"), fileName);
+                    ImagePath.SaveAs(path);
+
+                    // set properties
+                    article.ImagePath = fileName;
+                }
+
+                // set dates
+                article.UpdatedAt = DateTime.Now;
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -125,6 +193,7 @@ namespace CeeLearnAndDo.Controllers
 
         // GET: beheer/artikelen/verwijderen/5
         [Route("verwijderen/{id:int}")]
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -143,6 +212,7 @@ namespace CeeLearnAndDo.Controllers
         [Route("verwijderen/{id:int}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Article article = db.Articles.Find(id);
@@ -151,6 +221,7 @@ namespace CeeLearnAndDo.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

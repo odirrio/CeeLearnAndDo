@@ -48,11 +48,11 @@ textarea {
 }
 
 hr.star-light:after {
-    background-color: #4e84c4
+    background: none;
 }
 
 hr.star-dark:after {
-    background-color: #ffffff;
+    background: none;
     color: #000000;
 }
 
@@ -131,4 +131,16 @@ footer iframe {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/*
+    Articles
+*/
+
+pre {
+    background: #F6F8FA;
+    padding: 2rem;
+    width: 50%;
+    min-width: 600px;
+    border-left: 3px solid #1C5182;
 }

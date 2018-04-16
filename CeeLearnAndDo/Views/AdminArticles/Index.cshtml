@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<CeeLearnAndDo.Models.Article>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Artikelen-databank";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Artikelen-databank</h2>
 
 <p>
     @Html.ActionLink("Nieuwe artikel", "Create", null, new { @class = "btn btn-success" })
@@ -75,14 +75,24 @@
     <div class="list-group">
         <a href="@Url.Action("Details", new { id = item.Id })" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <img class="card-img-top" src="~/UploadedFiles/ArticleImages/@Html.DisplayFor(modelItem => item.ImagePath)" />
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">@Html.DisplayFor(modelItem => item.Title)</h5>
-                        <small>
-                            @Html.DisplayFor(modelItem => item.UpdatedAt)
+                        <h2 class="mb-1">@Html.DisplayFor(modelItem => item.Title)</h2>
+                        <small style="text-align: right;">
+                            @Html.DisplayFor(modelItem => item.UpdatedAt)<br/>
+                            @{
+                                if (item.Approved)
+                                {
+                                    <i>Goedgekeurd</i>
+                                }
+                                else
+                                {
+                                    <i>Nog niet goedgekeurd</i>
+                                }
+                            }
                         </small>
                     </div>
                     <p class="mb-1">
@@ -95,18 +105,13 @@
                             @Html.DisplayFor(modelItem => item.Description)
                         }
                     </p>
-                    <small>
-                        @if (item.Content.Length > 400)
-                        {
-                            @item.Content.Substring(0, 400)<span>...</span>
-                        }
-                        else
-                        {
-                            @Html.DisplayFor(modelItem => item.Content)
-                        }
-                    </small>
+
+
                 </div>
+
             </div>
+
         </a>
+
     </div>
-}
+                        }
