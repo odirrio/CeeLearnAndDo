@@ -360,10 +360,8 @@ C:\Users\Glenn\Desktop\School\CeeLearnAndDo\CeeLearnAndDo\CeeLearnAndDo\bin\Micr
 C:\Users\Glenn\Desktop\School\CeeLearnAndDo\CeeLearnAndDo\CeeLearnAndDo\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Glenn\Desktop\School\CeeLearnAndDo\CeeLearnAndDo\CeeLearnAndDo\bin\Microsoft.AI.Web.xml
 C:\Users\Glenn\Desktop\School\CeeLearnAndDo\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.csprojResolveAssemblyReference.cache
-C:\Users\Glenn\Desktop\School\CeeLearnAndDo\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.Migrations.Initial.resources
-C:\Users\Glenn\Desktop\School\CeeLearnAndDo\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.Migrations.added_props_to_user_registerModel.resources
-C:\Users\Glenn\Desktop\School\CeeLearnAndDo\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.Migrations.removed_dates_from_applicationuser.resources
-C:\Users\Glenn\Desktop\School\CeeLearnAndDo\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.csproj.GenerateResource.Cache
 C:\Users\Glenn\Desktop\School\CeeLearnAndDo\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.csproj.CoreCompileInputs.cache
 C:\Users\Glenn\Desktop\School\CeeLearnAndDo\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.dll
 C:\Users\Glenn\Desktop\School\CeeLearnAndDo\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.pdb
+C:\Users\Glenn\Desktop\School\CeeLearnAndDo\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.Migrations.first.resources
+C:\Users\Glenn\Desktop\School\CeeLearnAndDo\CeeLearnAndDo\CeeLearnAndDo\obj\Debug\CeeLearnAndDo.csproj.GenerateResource.Cache

@@ -22,11 +22,8 @@ namespace CeeLearnAndDo.Models
         [Display(Name = "Beschrijving")]
         public string Description { get; set; }
 
-        public Answer Answer { get; set; }
-
-        [Display(Name = "Antwoord")]
-        [ForeignKey("Answer")]
-        public int AnswerId { get; set; }
+        [Display(Name = "Vraag")]
+        public List<Answer> Answer { get; set; }
 
         [Display(Name = "Geplaatst op")]
         public DateTime CreatedAt { get; set; }

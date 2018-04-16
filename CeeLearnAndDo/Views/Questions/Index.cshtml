@@ -1,0 +1,59 @@
+﻿@model IEnumerable<CeeLearnAndDo.Models.Question>
+
+@{
+    ViewBag.Title = "De vraagbaak";
+}
+
+<div class="head-container">
+    <div class="container">
+
+    <h2>De vraagbaak</h2>
+
+    <p>
+        @Html.ActionLink("Stel uw vraag", "Create")
+    </p>
+
+    <table class="table">
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Answer.Content)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.UpdatedAt)
+            </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Answer.Content)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.UpdatedAt)
+                </td>*@
+            </tr>
+        }
+
+    </table>
+    </div>
+</div>

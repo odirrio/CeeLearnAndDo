@@ -197,21 +197,14 @@
     <Compile Include="Controllers\AdminReferencesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Controllers\ReferencesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803261127055_Initial.cs" />
-    <Compile Include="Migrations\201803261127055_Initial.Designer.cs">
-      <DependentUpon>201803261127055_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803261352037_added_props_to_user_registerModel.cs" />
-    <Compile Include="Migrations\201803261352037_added_props_to_user_registerModel.Designer.cs">
-      <DependentUpon>201803261352037_added_props_to_user_registerModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803261359009_removed_dates_from_applicationuser.cs" />
-    <Compile Include="Migrations\201803261359009_removed_dates_from_applicationuser.Designer.cs">
-      <DependentUpon>201803261359009_removed_dates_from_applicationuser.cs</DependentUpon>
+    <Compile Include="Migrations\201804160920304_first.cs" />
+    <Compile Include="Migrations\201804160920304_first.Designer.cs">
+      <DependentUpon>201804160920304_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -322,7 +315,9 @@
     <Content Include="vendor\magnific-popup\jquery.magnific-popup.js" />
     <Content Include="vendor\magnific-popup\jquery.magnific-popup.min.js" />
     <Content Include="vendor\magnific-popup\magnific-popup.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -415,11 +410,11 @@
     <Content Include="Views\AdminCategories\Edit.cshtml" />
     <Content Include="Views\AdminCategories\Index.cshtml" />
     <Content Include="Views\References\Index.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
-=======
     <Content Include="Views\References\Details.cshtml" />
->>>>>>> origin/develop
+    <Content Include="Views\Questions\Create.cshtml" />
+    <Content Include="Views\Questions\Details.cshtml" />
+    <Content Include="Views\Questions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -439,14 +434,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803261127055_Initial.resx">
-      <DependentUpon>201803261127055_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803261352037_added_props_to_user_registerModel.resx">
-      <DependentUpon>201803261352037_added_props_to_user_registerModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803261359009_removed_dates_from_applicationuser.resx">
-      <DependentUpon>201803261359009_removed_dates_from_applicationuser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804160920304_first.resx">
+      <DependentUpon>201804160920304_first.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
