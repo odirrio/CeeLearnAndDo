@@ -40,10 +40,6 @@ textarea {
 /*
     Header
 */
-.profile-spacing{
-    padding-left: 1rem;
-    padding-right: 2rem;
-}
 .header-image {
     border-radius: 50%;
     height: 200px;
@@ -65,10 +61,10 @@ hr.star-dark:after {
     color: #000000 !important;
 }
 
-    .btn-outline-dark:hover {
+.btn-outline-dark:hover {
         background-color: #000000 !important;
-        color: #ffffff !important;
-    }
+        color:#ffffff !important;
+}
 
 .btn-active {
     color: #000000 !important;
@@ -77,21 +73,13 @@ hr.star-dark:after {
 .btn-contact {
     background-color: #4e84c4 !important;
     border-color: #4e84c4 !important;
-    color: #ffffff !important;
-}
-.capitalize {
-    text-transform: uppercase;
-    padding: 1rem;
-    text-decoration: none;
-    color: #FFF;
-}
-.capitalize:hover {
-    color: #18bc9c;
-    text-decoration: none;
+    color:#ffffff !important;
 }
 
 /*Footer Styling*/
 footer {
+    display: flex;
+    flex-direction: row;
     background-color: #1C5182;
     padding: 3rem 0;
 }
@@ -105,13 +93,16 @@ footer {
         font-size: 1.5rem;
         color: white;
     }
-
+.social-media {
+    margin-left: 14%
+}
 .company-information {
+    margin-left: 7rem;
     width: 100%;
     max-width: 18rem;
 }
 
-.sm-ico {
+.sm-ico{
     display: flex;
 }
 
@@ -132,11 +123,5 @@ footer iframe {
 .card-img-top {
     width: 100%;
     height: 200px;
-    object-fit: cover;
-}
-
-.details-img {
-    width: 100%;
-    height: auto;
     object-fit: cover;
 }

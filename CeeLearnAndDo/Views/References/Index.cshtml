@@ -26,17 +26,10 @@
                         </a>
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a title="Bekijken" href="@Url.Action("Details", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Title)</a>
+                                <a title="Ga naar '@Html.DisplayFor(modelItem => item.URL)'" href="http://@Html.DisplayFor(modelItem => item.URL)" target="_blank">@Html.DisplayFor(modelItem => item.Title)</a>
                             </h4>
                             <p class="card-text">
-                                @if (item.Description.Length > 50)
-                                {
-                                    @item.Description.Substring(0, 50)<span>...</span>
-                                }
-                                else
-                                {
-                                    @Html.DisplayFor(modelItem => item.Description)
-                                }
+                                @Html.DisplayFor(modelItem => item.Description)
                             </p>
                         </div>
                     </div>
